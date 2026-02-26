@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Patient Management</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h1 class="display-5">Welcome to Patient Management Application</h1>
+        <p class="lead">Manage Patients and Services easily</p>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="d-grid gap-3">
+                <!-- Patient Buttons -->
+                <a th:href="@{/patients}" class="btn btn-primary btn-lg">View All Patients</a>
+              
+
+                <!-- Service Buttons -->
+                <a th:href="@{/services}" class="btn btn-primary btn-lg">View All Services</a>
+          
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
