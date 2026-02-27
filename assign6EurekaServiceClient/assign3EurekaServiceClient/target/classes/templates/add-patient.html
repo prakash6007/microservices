@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Patient (via Patient-MS)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white text-center">
+                    <h3>Add New Patient</h3>
+                </div>
+                <div class="card-body">
+
+                    <!-- Submit goes to Patient-MS -->
+                    <form th:action="@{http://localhost:8080/patients/add}" th:object="${patient}" method="post">
+                        <div class="mb-3">
+                            <label class="form-label">First Name</label>
+                            <input type="text" th:field="*{firstname}" class="form-control" placeholder="Enter first name" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Last Name</label>
+                            <input type="text" th:field="*{lastname}" class="form-control" placeholder="Enter last name" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100">Add Patient</button>
+                    </form>
+
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center gap-3 mt-3">
+                <a href="http://localhost:8080/patients" class="btn btn-primary">View Patients (Patient-MS)</a>
+                <a th:href="@{/}" class="btn btn-secondary">Back Home</a>
+                <a th:href="@{/services}" class="btn btn-success">View Services</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
